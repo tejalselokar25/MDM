@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <center>
+        <h1>S.B.Jain College of Engineering</h1>
+        <h2>Student Registration Form</h2>
+    </center>
+    <hr>
+    <form action="#" method="post">
+        <fieldset>
+            <legend><b>Personal Information</b></legend>
+
+            <label>First Name:</label><br>
+            <input type="text" name="fname" placeholder="Enter First Name" required>
+            <br><br>
+
+            <label>Middle Name:</label><br>
+            <input type="text" name="mname" placeholder="Enter Middle Name">
+            <br><br>
+
+            <label>Last Name:</label><br>
+            <input type="text" name="lname" placeholder="Enter Last Name" required>
+            <br><br>
+
+            <label>Date of Birth:</label><br>
+            <input type="date" name="dob" required>
+            <br><br>
+
+            <label>Age:</label><br>
+            <input type="number" name="age" min="17" max="25" required>
+            <br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" name="gender" required> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other
+            <br><br>
+
+            <label>Blood Group:</label><br>
+            <select name="blood">
+            <option>Select</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Contact Information</b></legend>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" placeholder="abc@gmail.com" required>
+            <br><br>
+
+            <label>Mobile Number:</label><br>
+            <input type="tel" name="mobile" placeholder="9876543210" pattern="[0-9]{10}" required>
+            <br><br>
+
+            <label>Alternate Mobile:</label><br>
+            <input type="tel" name="altmobile" pattern="[0-9]{10}">
+            <br><br>
+
+            <label>Address:</label><br>
+            <textarea rows="4" cols="40" placeholder="Enter Full Address"></textarea>
+            <br><br>
+
+            <label>City:</label><br>
+            <input type="text" name="city">
+            <br><br>
+
+            <label>State:</label><br>
+            <input type="text" name="state">
+            <br><br>
+        </fieldset>
+        <br>
+         <fieldset>
+            <legend><b>Academic Details</b></legend>
+
+            <label>Student ID:</label><br>
+            <input type="text" placeholder="STU2026001" required>
+            <br><br>
+
+            <label>Course:</label><br>
+            <select required>
+            <option value="">Select Course</option>
+            <option>B.Tech</option>
+            <option>BCA</option>
+            <option>B.Sc</option>
+            <option>B.Com</option>
+            <option>MCA</option>
+            </select>
+            <br><br>
+
+            <label>Branch:</label><br>
+            <select required>
+            <option value="">Select Branch</option>
+            <option>Computer Science</option>
+            <option>AIML</option>
+            <option>Information Technology</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            </select>
+            <br><br>
+
+            <label>Admission Year:</label><br>
+            <input type="number" min="2020" max="2035" required>
+            <br><br>
+
+            <label>Semester:</label><br>
+            <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Other Information</b></legend>
+
+            <label>Hobbies:</label><br>
+            <input type="checkbox"> Reading
+            <input type="checkbox"> Sports
+            <input type="checkbox"> Coding
+            <br><br>
+
+            <label>Declaration:</label><br>
+            <input type="checkbox" required>
+            I hereby declare that all the information provided is true.
+        </fieldset>
+        <br>
+        <center>
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear Form">
+        </center>
+    </form>
+
+</body>
+</html>
