@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tejal Selokar — Resume</title>
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#e7efff;
+      --border:#e5e7eb;
+      --chip:#f1f5f9;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+
+    .container{
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 6px 20px rgba(17,24,39,0.06);
+    }
+
+    
+    .header{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--border);
+      margin-bottom:22px;
+    }
+    .avatar{
+      width:72px; height:72px; border-radius:50%;
+      background:linear-gradient(135deg,#c7d2fe,#e9d5ff);
+      display:flex; align-items:center; justify-content:center;
+      color:#3b3b3b; font-weight:700; font-size:22px;
+      border:1px solid var(--border);
+      user-select:none;
+    }
+    .title h1{
+      font-size:26px; margin:0 0 4px 0;
+    }
+    .title .subtitle{
+      font-weight:600; color:var(--muted); font-size:15px;
+    }
+
+    
+    h2{
+      font-size:18px; margin:18px 0 10px 0;
+      display:flex; align-items:center; gap:8px;
+    }
+    .section{
+      margin-bottom:18px;
+    }
+    p{margin:0 0 10px 0}
+
+    
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; }
+    .chip{
+      background:var(--chip);
+      border:1px solid var(--border);
+      color:#111827; font-weight:600;
+      padding:6px 10px; border-radius:999px; font-size:14px;
+    }
+
+
+    .table-wrap{
+      overflow-x:auto;
+      border:1px solid var(--border);
+      border-radius:10px;
+    }
+    table{
+      width:100%; border-collapse:collapse; min-width:520px;
+      background:#fff;
+    }
+    th, td{
+      padding:10px 12px; text-align:left; border-bottom:1px solid var(--border);
+      font-size:14px;
+    }
+    th{
+      background:var(--accent-soft); color:#1e3a8a;
+    }
+    tr:last-child td{ border-bottom:none }
+
+    .list{ margin:0; padding-left:18px }
+    .list li{ margin:6px 0 }
+
+    .contact{
+      display:flex; flex-wrap:wrap; gap:14px;
+      padding-top:10px; border-top:1px solid var(--border);
+      margin-top:8px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background:#fff; border:1px solid var(--border);
+      padding:8px 12px; border-radius:10px; font-size:14px;
+    }
+    .badge .label{ color:var(--muted) }
+    .foot{
+      text-align:center; color:var(--muted); font-size:13px; margin-top:18px;
+    }
+
+    @media (max-width:600px){
+      .header{ align-items:flex-start }
+      .avatar{ width:64px; height:64px; font-size:20px }
+      .title h1{ font-size:22px }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      
+      <div class="header">
+        <div class="avatar" aria-label="Profile picture placeholder">TS</div>
+        <div class="title">
+          <h1>Tejal Selokar</h1>
+          <div class="subtitle">B.Tech CSE (AI & ML) Student</div>
+        </div>
+      </div>
+
+      
+      <section class="section" aria-labelledby="about">
+        <h2 id="about">About Me</h2>
+        <p>I am a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning. I enjoy coding and learning new technologies.</p>
+      </section>
+
+      
+      <section class="section" aria-labelledby="skills">
+        <h2 id="skills">Skills</h2>
+        <div class="chips">
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
+          <span class="chip">Python</span>
+          <span class="chip">HTML</span>
+          <span class="chip">SQL</span>
+        </div>
+      </section>
+
+      
+      <section class="section" aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Qualification</th>
+                <th>Board/College</th>
+                <th>Year</th>
+                <th>Percentage/CGPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10th</td>
+                <td>ABC School</td>
+                <td>2021</td>
+                <td>85%</td>
+              </tr>
+              <tr>
+                <td>12th</td>
+                <td>XYZ Junior College</td>
+                <td>2023</td>
+                <td>80%</td>
+              </tr>
+              <tr>
+                <td>B.Tech</td>
+                <td>CSE (AI &amp; ML)</td>
+                <td>2027</td>
+                <td>9.0 CGPA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+      <section class="section" aria-labelledby="projects">
+        <h2 id="projects">Projects</h2>
+        <ul class="list">
+          <li><strong>Student Management System:</strong> SQL project</li>
+          <li><strong>Portfolio Website:</strong> HTML based</li>
+          <li><strong>Python Mini Projects:</strong> Small programs</li>
+        </ul>
+      </section>
+
+      
+      <section class="section" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <div class="contact">
+          <div class="badge">
+            <span class="label">Email</span>
+            <a href="mailto:tejalselokar123@gmail.com">tejalselokar123@gmail.com</a>
+          </div>
+          <div class="badge">
+            <span class="label">Phone</span>
+            <a href="tel:1234567890">1234567890</a>
+          </div>
+          <div class="badge">
+            <span class="label">GitHub</span>
+            <a href="[github.com](https://github.com/)" target="_blank" rel="noopener">github.com</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="foot">© 2026 Tejal Selokar</div>
+    </div>
+  </div>
+</body>
+</html>
