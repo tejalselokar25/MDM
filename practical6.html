@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CM25118</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-amber-50 min-h-screen py-10">
+
+  <div class="max-w-3xl mx-auto px-4">
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+
+      <div class="bg-emerald-700 text-white px-7 py-6">
+        <h1 class="text-2xl font-semibold">Student Grade Calculator</h1>
+        </p>
+      </div>
+
+      <div class="p-7">
+
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">
+          Student Details
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="text-sm font-medium text-gray-600">Student Name</label>
+            <input id="name" type="text"
+              class="w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="Enter student name">
+          </div>
+
+          <div>
+            <label class="text-sm font-medium text-gray-600">USN</label>
+            <input id="usn" type="text"
+              class="w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="Enter USN">
+          </div>
+        </div>
+
+        <h2 class="text-lg font-semibold text-gray-800 mt-8 mb-4">
+          Enter Marks
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <div>
+            <label class="text-sm text-gray-600">MML</label>
+            <input type="number" min="0" max="100"
+              class="mark w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="0 - 100">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-600">DSA</label>
+            <input type="number" min="0" max="100"
+              class="mark w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="0 - 100">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-600">OOPs</label>
+            <input type="number" min="0" max="100"
+              class="mark w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="0 - 100">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-600">MDM-I</label>
+            <input type="number" min="0" max="100"
+              class="mark w-full mt-1.5 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="0 - 100">
+          </div>
+
+        </div>
+
+        <button onclick="calculateResult()"
+          class="mt-7 bg-orange-500 hover:bg-orange-600 text-white px-7 py-3 rounded-lg font-medium transition">
+          Generate Report Card
+        </button>
+
+      </div>
+    </div>
+
+    <div id="report" class="hidden bg-white rounded-xl shadow-md mt-8 overflow-hidden">
+
+      <div class="bg-orange-500 text-white text-center px-6 py-5">
+        <h2 class="text-xl font-semibold">STUDENT REPORT CARD</h2>
+        <p class="text-orange-100 text-sm mt-1">Semester Examination</p>
+      </div>
+
+      <div class="p-7">
+
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-700 mb-6">
+          <p><b>Student Name:</b> <span id="rName"></span></p>
+          <p><b>USN:</b> <span id="rUsn"></span></p>
+        </div>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-emerald-50 text-emerald-800">
+              <th class="border border-gray-200 p-3 text-left">Subject</th>
+              <th class="border border-gray-200 p-3">Marks</th>
+            </tr>
+          </thead>
+
+          <tbody id="marksTable"></tbody>
+
+          <tfoot>
+            <tr class="bg-amber-50 font-semibold">
+              <td class="border border-gray-200 p-3">Total</td>
+              <td id="rTotal" class="border border-gray-200 p-3 text-center"></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div class="grid md:grid-cols-2 gap-4 mt-6">
+          <div class="bg-emerald-50 rounded-lg p-4">
+            <p class="text-sm text-gray-500">Percentage</p>
+            <p class="text-xl font-semibold text-emerald-700">
+              <span id="rPercentage"></span>%
+            </p>
+          </div>
+
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-gray-500">Grade</p>
+            <p class="text-xl font-semibold text-orange-600" id="rGrade"></p>
+          </div>
+        </div>
+
+        <p id="rStatus" class="mt-6 text-center font-semibold"></p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function calculateResult() {
+      let name = document.getElementById("name").value.trim();
+      let usn = document.getElementById("usn").value.trim();
+      let marks = document.querySelectorAll(".mark");
+
+      if (!name || !usn) {
+        alert("Please enter student name and USN.");
+        return;
+      }
+
+      let subjects = ["MML", "DSA", "OOPs", "MDM-I"];
+      let total = 0;
+      let table = "";
+
+      for (let i = 0; i < marks.length; i++) {
+        let value = Number(marks[i].value);
+
+        if (marks[i].value === "" || value < 0 || value > 100) {
+          alert("Please enter valid marks between 0 and 100.");
+          return;
+        }
+
+        total += value;
+
+        table += `
+          <tr>
+            <td class="border border-gray-200 p-3">${subjects[i]}</td>
+            <td class="border border-gray-200 p-3 text-center">${value}</td>
+          </tr>`;
+      }
+
+      let percentage = total / 4;
+      let grade;
+
+      if (percentage >= 90) grade = "A+";
+      else if (percentage >= 80) grade = "A";
+      else if (percentage >= 70) grade = "B";
+      else if (percentage >= 60) grade = "C";
+      else if (percentage >= 50) grade = "D";
+      else if (percentage >= 40) grade = "E";
+      else grade = "F";
+
+      document.getElementById("rName").textContent = name;
+      document.getElementById("rUsn").textContent = usn;
+      document.getElementById("marksTable").innerHTML = table;
+      document.getElementById("rTotal").textContent = total + " / 400";
+      document.getElementById("rPercentage").textContent = percentage.toFixed(2);
+      document.getElementById("rGrade").textContent = grade;
+
+      let status = document.getElementById("rStatus");
+
+      if (percentage < 40) {
+        status.textContent = "Result: FAIL";
+        status.className = "mt-6 text-center font-semibold text-red-600";
+      } else {
+        status.textContent = "Result: PASS";
+        status.className = "mt-6 text-center font-semibold text-emerald-700";
+      }
+
+      document.getElementById("report").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>

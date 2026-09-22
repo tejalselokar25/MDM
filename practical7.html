@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CM25118</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <div class="max-w-4xl mx-auto px-5 py-12">
+
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-gray-800">Student Help Portal</h1>
+      <p class="text-gray-500 mt-2">Frequently Asked Questions</p>
+    </div>
+
+    <div class="space-y-3">
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          What are the minimum attendance requirements for appearing in the semester exam?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Students must maintain the minimum attendance percentage required by the college or university to be eligible for the semester examination.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          What should I do if my attendance is marked incorrectly?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Contact the concerned subject teacher or department coordinator and provide the details of the classes where your attendance was recorded incorrectly.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          How can I apply for a re-examination or backlog exam?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Check the examination notice or student portal for the application dates and submit the required form and examination fee before the deadline.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          When and where can I collect my semester marksheet?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          The department or examination office usually announces when marksheets are available for collection. Check the latest department notice for details.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          What is the procedure for changing an elective subject?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Contact your department coordinator and submit the elective change request within the period specified by the department.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          Whom should I contact if I have a problem with my internal marks?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          First contact the concerned subject teacher. If the issue is not resolved, you can approach the class coordinator or Head of Department.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          What documents are required for applying for a bonafide certificate?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Usually, students need their college ID or enrollment details. Check with the administration office for the exact documents required.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          How can I get permission to attend an event or competition outside the college?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Submit a permission request to your department coordinator or faculty in charge with the event details and required dates.
+        </div>
+      </div>
+
+      <div class="faq bg-white border border-gray-200 rounded-xl shadow-sm">
+        <button class="question w-full flex justify-between items-center p-5 text-left font-semibold text-gray-700 hover:bg-gray-50">
+          What should I do if I miss an important practical or laboratory session?
+          <span class="icon text-xl text-blue-600">+</span>
+        </button>
+        <div class="answer hidden px-5 pb-5 text-gray-600">
+          Inform the concerned faculty member as soon as possible and ask about the procedure for completing the missed practical or laboratory work.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach(question => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector(".icon");
+
+        answer.classList.toggle("hidden");
+        icon.textContent = answer.classList.contains("hidden") ? "+" : "−";
+      });
+    });
+  </script>
+
+</body>
+</html>
