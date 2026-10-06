@@ -1,0 +1,20 @@
+# Ignore local project files and generated assets
+.vscode/
+node_modules/
+dist/
+
+# Ignore local web/media files that are not meant for the repo
+*.html
+*.css
+*.js
+*.json
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Keep only the files you intentionally track
+!practical9.html
+!README.md
+!.gitignore
