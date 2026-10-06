@@ -1,5 +1,6 @@
 # Ignore local project files and generated assets
 .vscode/
+.hintrc
 node_modules/
 dist/
 
